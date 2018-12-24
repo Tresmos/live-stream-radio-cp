@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l4">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Stream Status</span>
+                        {{#if status}}
+                        <h1>Online</h1>
+                        {{else}}
+                        <h1>Offline</h1>
+                        {{/if}}
+                    </div>
+                    <div class="card-action">
+                        <a href="/stream/start">Start</a>
+                        <a href="/stream/stop">Stop</a>
+                        <a href="/stream/restart">Restart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l8">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Stream Information</span>
+                        <p><b>Stream Name:</b> {{config.value.radio.overlay.title.text}}</p>
+                        <p><b>Video Resolution:</b> {{config.value.video_width}}x{{config.value.video_height}}</p>
+                        <p><b>Video FPS:</b> {{config.value.video_fps}}</p>
+                        <p><b>Video Bitrate:</b> {{config.value.video_bit_rate}}</p>
+                        <p><b>Audio Bitrate:</b> {{config.value.audio_bit_rate}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m12 l12">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Library</span>
+                        <ul>
+                            {{#each library}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
